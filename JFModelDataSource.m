@@ -13,12 +13,12 @@
 
 - (id)init
 {
-	if ([self class] == [JFModelDataSource class])
-	{
-		NSAssert(NO, @"You cannot init this class directly. Instead, use a subclass.");
-		return nil;
-	}
-	else
+    if ([self class] == [JFModelDataSource class])
+    {
+        NSAssert(NO, @"You cannot init this class directly. Instead, use a subclass.");
+        return nil;
+    }
+    else
     {
         self = [super init];
         
@@ -90,9 +90,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public methods
 
-- (void)updateFromDataSource:(JFModelDataSource *)dataSource
+- (void)setItemsFromDataSource:(JFModelDataSource *)dataSource
 {
     self.items = [dataSource.items copy];
+}
+
+- (void)addItemsFromDataSource:(JFModelDataSource *)dataSource
+{
+    self.items = [self.items arrayByAddingObjectsFromArray:[dataSource.items copy]];
 }
 
 

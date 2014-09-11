@@ -36,7 +36,8 @@
  */
 + (instancetype)populateDataSourceFromJSON:(id)JSON;
 
-- (void)updateFromDataSource:(JFModelDataSource *)dataSource;
+- (void)setItemsFromDataSource:(JFModelDataSource *)dataSource;
+- (void)addItemsFromDataSource:(JFModelDataSource *)dataSource;
 
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
 
